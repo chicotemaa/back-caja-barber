@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cajas",
+  "info": {
+    "singularName": "caja",
+    "pluralName": "cajas",
+    "displayName": "caja",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "fondos": {
+      "type": "decimal"
+    },
+    "alias": {
+      "type": "string"
+    },
+    "turnos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::turno.turno",
+      "mappedBy": "cajas"
+    },
+    "activo": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

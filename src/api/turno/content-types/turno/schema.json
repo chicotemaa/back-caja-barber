@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "turnos",
+  "info": {
+    "singularName": "turno",
+    "pluralName": "turnos",
+    "displayName": "turno",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "turno": {
+      "type": "datetime"
+    },
+    "servicios": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::servicio.servicio",
+      "inversedBy": "turnos"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "turnos"
+    },
+    "cajas": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::caja.caja",
+      "inversedBy": "turnos"
+    },
+    "estado": {
+      "type": "boolean",
+      "default": false
+    },
+    "fin": {
+      "type": "datetime"
+    },
+    "productos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::producto.producto",
+      "inversedBy": "turnos"
+    },
+    "cliente": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::cliente.cliente",
+      "inversedBy": "turnos"
+    }
+  }
+}

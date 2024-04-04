@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "servicios",
+  "info": {
+    "singularName": "servicio",
+    "pluralName": "servicios",
+    "displayName": "servicio",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "precio": {
+      "type": "decimal"
+    },
+    "turnos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::turno.turno",
+      "mappedBy": "servicios"
+    },
+    "activo": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}
